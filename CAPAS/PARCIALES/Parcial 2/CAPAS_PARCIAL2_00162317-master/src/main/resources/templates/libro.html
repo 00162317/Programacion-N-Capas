@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Ingresar libro</h1>
+	<form th:action="@{/ingresarLibro}" method="post" th:object="${libro}">
+		<label>Titulo</label><input id="s_titulo" th:field="${libro.s_titulo}" name="s_titulo"/><span th:errors="*{s_titulo}" style="color: #FF0000"></span>
+		<label>Autor</label><input id="s_autor" th:field="${libro.s_autor}" name="s_autor"/><span th:errors="*{s_autor}" style="color: #FF0000"></span>
+		
+		<label>Categoria</label><select th:field="*{categoria.c_categoria}">	
+			<option	th:each="item : ${categoriaLista}"
+					th:value=${item.c_categoria}
+					th:text=${item.s_categoria}>
+			</option>
+		</select>
+		
+		<!-- <label>Fecha</label><input id="f_fecha_ingreso" th:field="${libro.f_ingreso}" type="date" name="f_fecha_ingreso"> -->
+		
+		<label>Estado:</label>
+		<label>Activo:</label> <input type="radio" th:field="*{b_estado}" th:value="${true}"><br>
+		<label>Inactivo:</label> <input type="radio" th:field="*{b_estado}" th:value="${false}"><br>
+		
+		<label>ISBN</label><input id="s_isbn" th:field="${libro.s_isbn}" type="text" name="s_isbn"><span th:errors="*{s_isbn}" style="color: #FF0000"></span>
+		
+		<input type="submit" value="Guardar">
+	</form>
+</body>
+</html>

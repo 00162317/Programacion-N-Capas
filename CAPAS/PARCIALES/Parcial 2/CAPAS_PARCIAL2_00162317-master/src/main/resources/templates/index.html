@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>PARCIAL 2 - Roberto Hernandez - 00162317</h1>
+	
+	<span th:text="${variable}"></span>
+	
+	
+	<form th:action="@{/categoria}" method="post">
+		<input type="submit" value="Ingresar Categoria">
+	</form>
+	
+	<form th:action="@{/libro}" method="post">
+		<input type="submit" value="Ingresar Libro">
+	</form>
+	
+	<form th:action="@{/mostrar}" method="post">
+		<input type="submit" value="Ver Libros">
+	</form>
+</body>
+</html>

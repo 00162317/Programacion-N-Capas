@@ -1,0 +1,46 @@
+package com.uca.capas.tarea3.controller;
+
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class FormController {
+	
+	@RequestMapping("/final")
+	public ModelAndView parametros1(HttpServletRequest request) /*throws ParseException */{
+		ModelAndView mav = new ModelAndView();
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String fecha = request.getParameter("fecha");
+		
+		
+		//java.util.Date date = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+		//java.util.Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse("2003-01-01");
+		
+		
+		String lugar = request.getParameter("lugar");
+		String colegio = request.getParameter("colegio");
+		String fijo = request.getParameter("fijo");
+		String celular = request.getParameter("celular");
+		
+		List<String> lista = new ArrayList<>();
+
+		
+		if(!lista.isEmpty()) {
+			mav.setViewName("formulario/final");
+		}
+		
+		mav.setViewName("commons/login");
+		return mav;
+	}
+
+}

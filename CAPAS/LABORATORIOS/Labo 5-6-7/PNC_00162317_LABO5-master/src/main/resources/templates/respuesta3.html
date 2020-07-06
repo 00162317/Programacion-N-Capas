@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Eliminar al estudiante</h1>
+	
+	
+	<form th:action="@{/eliminar}" method="post" th:object="${estudiante}">
+		<label>Id Estudiante</label><input id="c_usuario"  type="number" name="c_usuario">
+		<input type="submit" value="Eliminar">
+	</form>
+	
+	<form th:action="@{/respuesta1}" method="post">
+		<input type="submit" value="Mostrar estudiantes">
+	</form>
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Regresar al index">
+	</form>
+</body>
+</html>

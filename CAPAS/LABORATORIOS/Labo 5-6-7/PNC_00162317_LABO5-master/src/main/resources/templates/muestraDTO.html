@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Resultado consulta DTO</h1>
+	
+	<table>
+		<thead>
+			<th>Nombre</th>
+			<th>Apellido</th>
+		</thead>
+		<th:block th:each="estudiante, row:${estudiantes}">
+			<tr>
+				<th th:text="${estudiante.nombre}"/>
+				<th th:text="${estudiante.apellido}"/>
+			</tr>
+		</th:block>
+	</table>
+	
+	
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Regresar al index">
+	</form>
+
+</body>
+</html>

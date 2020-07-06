@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Mostrando Libros</h1>
+		<table>
+		<thead>
+			<th>Titulo</th>
+			<th>Autor</th>
+			<th>Categoria</th>
+			<th>Fecha</th>
+			<th>Estado</th>
+			<th>ISBN</th>
+		</thead>
+		<th:block th:each="libro, row:${libroLista}">
+			 <tr>
+				<th th:text="${libro.s_titulo}"/>
+				<th th:text="${libro.s_autor}"/>
+				<th th:text="${libro.categoria.s_categoria}"/> 
+				<th th:text="${libro.F_ingresoDelegate}"/>
+				<th th:text="${libro.DelegateEstado}"/>
+				<th th:text="${libro.s_isbn}"/>
+			</tr>
+		</th:block> 
+	</table>
+	
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Volver a inicio">
+	</form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+
+    </head>
+
+    <body>
+        <h1>Datos del usuario</h1>
+        <p th:text="'Nombre: '+${usuario.nombre}"></p>
+        <p th:text="'Ocupacion: '+${usuario.ocupation}"></p>
+        <a href="/agregarUsuario">Regresar</a>
+    </body>
+    
+</html>

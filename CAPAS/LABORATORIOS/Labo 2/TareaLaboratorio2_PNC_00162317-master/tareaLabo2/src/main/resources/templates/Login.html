@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Agregar Usuario</h1>
+	<form action="#" th:action="@{/validacion}" th:object="${usuario}" method="post">
+		<p>Nombre: <input type="text" th:field="*{nombre}" name="nombre"></p>
+		<p>Contrasenia: <input type="password" th:field="*{contra}" name="contra"></p>
+		<p><input type="submit" value="Enviar">
+	</form>
+</body>
+</html>	

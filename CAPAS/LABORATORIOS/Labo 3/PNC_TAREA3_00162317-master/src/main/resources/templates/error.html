@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>ERROR!!</h1>
+		<div>
+			<th:block th:each="producto, row: ${productos}">
+				<label>El producto</label>
+				<label><th th:text="${producto.nombre}"></label>
+				<label> NO se adquirio</label>
+			</th:block>
+		</div>
+</body>
+</html>

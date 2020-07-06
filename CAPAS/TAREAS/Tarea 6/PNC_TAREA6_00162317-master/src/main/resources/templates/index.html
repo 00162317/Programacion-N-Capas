@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>SIMULACRO PARCIAL 2</h1>
+	
+	<form th:action="@{/ingresar}" method="post" th:object="${contribuyente}">
+		<label>Nombre</label><input id="s_nombre" th:field="${contribuyente.s_nombre}" name="s_nombre"/>
+		<label>Apellido</label><input id="apellido" th:field="${contribuyente.s_apellido}" type="text" name="apellido">
+		<label>Nit</label><input id="s_nit" th:field="${contribuyente.s_nit}" type="text" name="s_nit">
+		<label>Fecha</label><input id="f_fecha_ingreso" th:field="${contribuyente.f_fecha_ingreso}" type="date" name="f_fecha_ingreso">
+		 
+		
+		<label>Importancia</label><select th:field="*{importancia.c_importancia}">	
+			<option	th:each="item : ${importanciaLista}"
+					th:value=${item.c_importancia}
+					th:text=${item.nombre}>
+			</option>
+		</select>
+		
+		<input type="submit" value="Guardar">
+	</form>
+	<form th:action="@{/mostrarContribuyentes}" method="post">
+		<input type="submit" value="Ver Contribuyentes">
+	</form>
+</body>
+</html>

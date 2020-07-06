@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Mostrando lista de estudiantes</h1>
+
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Carne</th>
+			<th>Carrera</th>
+		</thead>
+		<th:block th:each="estudiante, row:${estudiantes}">
+			<tr>
+				<th th:text="${estudiante.cUsuario}" />
+				<th th:text="${estudiante.nombre}" />
+				<th th:text="${estudiante.apellido}" />
+				<th th:text="${estudiante.carne}" />
+				<th th:text="${estudiante.carrera}" />
+			</tr>
+		</th:block>
+	</table>
+<br>
+<h1>Edite un estudiante</h1>
+<br>
+	<form th:action="@{/editar}" method="post" th:object="${estudiante}">
+		<label>id</label><input type="number" id="c_usuario" name="c_usuario">
+		<label>Nombre</label><input id="nombre" name="nombre"> <label>Apellido</label><input
+			id="apellido" name="apellido"> <label>Carnet</label><input
+			id="carne" name="carne"> <label>Carrera</label><input
+			id="carrera" name="carrera"> <input type="submit"
+			value="Actualizar">
+	</form>
+
+	<br>
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Regresar al index">
+	</form>
+
+</body>
+</html>
